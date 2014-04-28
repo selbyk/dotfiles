@@ -1,0 +1,98 @@
+Xcursor*theme:	bluecurve
+
+!urxvt*font:             xft:montecarlo:size=8
+URxvt.font:		xft:monaco:pixelsize=14:antialias=true
+URxvt.boldFont:		xft:monaco:bold::pixelsize=14:antialias=true
+! fix for some weird font spacing (in pixels)
+! URxvt*le
+URxvt*loginShell: true
+URxvt.buffered:		true
+!URxvt.background:	black
+! transparent background (requires xcompmgr )
+URxvt.depth: 32
+URxvt.background: [85]#000000
+URxvt*scrollColor: [75]#000000
+URxvt.foreground:	gray
+URxvt.cursorColor:	green
+URxvt.underlineColor:	yellow
+tterSpace:	-1
+!URxvt.perl-ext-common:		true
+URxvt.title:		Awesome
+URxvt.perl-lib:		/usr/lib/urxvt/perl/
+URxvt.perl-ext-common:	default,matcher,clipboard
+! right-click to follow a link
+URxvt.matcher.button:	3
+URxvt.urlLauncher:	/usr/bin/chromium
+
+
+urxvt*termName:         rxvt
+urxvt*background:       [85]#0c0d0e
+urxvt*foreground:       #7f8f9f
+urxvt*scrollBar:        false
+urxvt*matcher.button:   1
+urxvt.transparent:    false
+urxvt*allow_bold:    true
+
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            full
+
+URxvt*geometry: 85x16
+URxvt*fading:        0
+URxvt*tintColor:     #ffffff
+URxvt*shading:        0
+URxvt*inheritPixmap:     False
+
+! black + red
+!urxvt*color0:     #3f3f3f
+urxvt*color0:      #101010
+urxvt*color1:      #705050
+! green + yellow
+urxvt*color2:      #60b48a
+urxvt*color3:      #f0dfaf
+! blue + purple
+urxvt*color4:      #506070
+urxvt*color5:      #dc8cc3
+! cyan + white
+urxvt*color6:      #8cd0d3
+urxvt*color7:      #dcdccc
+! bright-black + bright-red
+urxvt*color8:      #000000
+urxvt*color9:      #dca3a3
+! bright-green + bright-yellow
+urxvt*color10:     #c3bf9f
+urxvt*color11:     #f0dfaf
+! bright-blue + bright-purple
+urxvt*color12:     #94bff3
+urxvt*color13:     #ec93d3
+! bright-cyan + bright-white
+urxvt*color14:     #93e0e3
+urxvt*color15:     #ffffff
+!}}}
+
+
+
+! black
+!URxvt.color0  : #2E2E34343636
+!URxvt.color8  : #555557575353
+! red
+!URxvt.color1  : #CCCC00000000
+!URxvt.color9  : #EFEF29292929
+! green
+!URxvt.color2  : #4E4E9A9A0606
+!URxvt.color10 : #8A8AE2E23434
+! yellow
+!URxvt.color3  : #C4C4A0A00000
+!URxvt.color11 : #FCFCE9E94F4F
+! blue
+!URxvt.color4  : #59599797E7E7
+!URxvt.color12 : #72729F9FCFCF
+! magenta
+!URxvt.color5  : #757550507B7B
+!URxvt.color13 : #ADAD7F7FA8A8
+! cyan
+!URxvt.color6  : #060698209A9A
+!URxvt.color14 : #3434E2E2E2E2
+! white
+!URxvt.color7  : #D3D3D7D7CFCF
+!URxvt.color15 : #EEEEEEEEECEC
