@@ -3,3 +3,5 @@
 	name = Selby Kendrick
 [push]
 	default = matching
+[color]
+	ui = true
