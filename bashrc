@@ -2,5 +2,3 @@
 # ~/.bashrc
 #
 echo "I'm .bashrc"
-
-

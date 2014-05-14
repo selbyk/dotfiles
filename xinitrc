@@ -16,9 +16,7 @@ xset b off
 
 [[ -f ~/.Xresources ]] && xrdb -override ~/.Xresources
 
-
 # exec gnome-session
 # exec startkde
 # window manager
 exec awesome
-
