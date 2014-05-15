@@ -45,7 +45,7 @@ URxvt*termName:                       rxvt
 URxvt*geometry:                       85x16
 ! URxvt*chdir:                          string
 ! URxvt*reverseVideo:                   boolean
-URxvt*loginShell:                     true
+! URxvt*loginShell:                     true
 ! URxvt*jumpScroll:                     boolean
 ! URxvt*skipScroll:                     boolean
 ! URxvt*pastableTabs:                   boolean
@@ -76,8 +76,8 @@ URxvt*fading:                         0
 ! URxvt*cursorUnderline:                boolean
 ! URxvt*cursorBlink:                    boolean
 ! URxvt*pointerBlank:                   boolean
-URxvt*background:                     [85]#303430
-URxvt*foreground:                     [85]#ffffff
+URxvt*background:                     [60]#000000
+URxvt*foreground:                     [75]#ffffff
 ! URxvt*color0:                         color
 ! black + red
 !URxvt*color0:      #101010
