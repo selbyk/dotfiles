@@ -7,17 +7,24 @@ echo "I'm .bashrc"
 
 [[ -f ~/.Xresources ]] && xrdb -load ~/.Xresources
 
+ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+
 alsi -a -u
 
 # Config bash history
 export HISTSIZE=100000            # big history
 export HISTFILESIZE=100000        # big history
-export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+#export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 #HISTCONTROL=ignoredups:erasedups # no duplicates, erase already dupes
 shopt -s histappend # append to history, don't overwrite it
 
 # cool prompt
-PS1='$(tput setaf 4)\u$(tput setaf 7)@$(tput setaf 2)\h$(tput sgr0):> '
+#PS1='$(tput setaf 4)\u$(tput setaf 7)@$(tput setaf 2)\h$(tput sgr0):$ '
+PS1='\[\e[0;34m\]\u\[\e[m\]@\[\e[0;32m\]\w\[\e[m\]\[\e[0;34m\]:>\[\e[m\] \[\e[1;37m\]'
+
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  . /usr/share/bash-completion/bash_completion
+fi
 
 # auto change directory
 shopt -s autocd
@@ -128,3 +135,4 @@ alias ping='ping -c 5 -i .2'
 #12: Show open ports
 alias ports='netstat -tulanp'
 
+alias startx='ssh-agent startx'
