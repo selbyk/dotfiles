@@ -1,30 +1,24 @@
 #!/bin/bash
 # ~/.bashrc
 #
-echo "I'm .bashrc"
+#echo "I'm .bashrc"
 
+# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 [[ -f ~/.Xresources ]] && xrdb -load ~/.Xresources
 
-ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
-
 alsi -a -u
 
 # Config bash history
-export HISTSIZE=100000            # big history
-export HISTFILESIZE=100000        # big history
+export HISTSIZE=100000 						# big history
+export HISTFILESIZE=100000				# big history
 #export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 #HISTCONTROL=ignoredups:erasedups # no duplicates, erase already dupes
 shopt -s histappend # append to history, don't overwrite it
 
 # cool prompt
-#PS1='$(tput setaf 4)\u$(tput setaf 7)@$(tput setaf 2)\h$(tput sgr0):$ '
-PS1='\[\e[0;34m\]\u\[\e[m\]@\[\e[0;32m\]\w\[\e[m\]\[\e[0;34m\]:>\[\e[m\] \[\e[1;37m\]'
-
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-  . /usr/share/bash-completion/bash_completion
-fi
+PS1='[\@] $(tput setaf 4)\u$(tput setaf 7)@$(tput setaf 2)\h$(tput sgr0):> '
 
 # auto change directory
 shopt -s autocd
@@ -37,40 +31,33 @@ bind '"\e[6~": history-search-forward'
 # NOTE: 0 is true
 prog_exists ()
 {
-  command -v $1 > /dev/null 2>&1 || { return 1; }
-  return 0
+	command -v $1 > /dev/null 2>&1 || { return 1; }
+	return 0
 }
 
 source_file ()
 {
-  if [ -f $1 ] ; then
-    source $1
-  else
-    echo "$1 doesn't exist to source."
-  fi
+	if [ -f $1 ] ; then
+		source $1
+	else
+		echo "$1 doesn't exist to source."
+	fi
 }
 
 add_path ()
 {
-  if [ -d $1 ] ; then
-    PATH=$PATH:$1
-  else
-    echo "$1 doesn't exist to add to path."
-  fi
+	if [ -d $1 ] ; then
+		PATH=$PATH:$1
+	else
+		echo "$1 doesn't exist to add to path."
+	fi
 }
 
 #turn on numlock
 if ! prog_exists numlockOnTty ; then
-  setleds -D +num
-  echo "Install systemd-numlockontty from aur and enable it to get rid of this error"
+	setleds -D +num
+	echo "Install systemd-numlockontty from aur and enable it to get rid of this error"
 fi
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Source some files
-source_file /usr/share/chruby/chruby.sh
-
 # Path some stuff
 
 # Add RVM to PATH for scripting
@@ -82,11 +69,16 @@ add_path /opt/android-sdk/platform-tools
 
 # nodejs stuff
 if prog_exists npm ; then
-  add_path $(npm bin)
-  add_path $(npm bin -g)
+	add_path $(npm bin)
+	add_path $(npm bin -g)
 else
-  echo "npm isn't installed"
+	echo "npm isn't installed"
 fi
+
+# Source some files
+source_file /usr/share/chruby/chruby.sh
+
+source_file /home/selby/.rvm/scripts/rvm
 
 # Colorize commands
 alias ls='ls --color=auto'
@@ -99,16 +91,20 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+#alias g++='colorgcc'
+alias gcc='colorgcc'
+alias cc='colorgcc'
+
 if prog_exists colordiff ; then
-  alias diff='colordiff'
+	alias diff='colordiff'
 else
-  echo 'Install colordiff, fool'
+	echo 'Install colordiff, fool'
 fi
 
 if prog_exists htop ; then
-  alias top='htop'
+	alias top='htop'
 else
-  echo 'Install htop, fool'
+	echo 'Install htop, fool'
 fi
 
 # Everlane stuff - thanks taylor
@@ -134,5 +130,4 @@ alias nowdate='date +"%d-%m-%Y"'
 alias ping='ping -c 5 -i .2'
 #12: Show open ports
 alias ports='netstat -tulanp'
-
-alias startx='ssh-agent startx'
+PATH="/usr/local/heroku/bin:$PATH"

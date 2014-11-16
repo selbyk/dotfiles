@@ -1,8 +1,4 @@
-! pretty cursor
-
-Xcursor.theme:  oxygen
-
-! pretty fonts
+Xcursor.theme:	bluecurve
 
 Xft.dpi:        96
 Xft.autohint:   0
@@ -12,40 +8,45 @@ Xft.hinting:    1
 Xft.antialias:  1
 Xft.rgba:       rgba
 
-! pretty colors
-
 ! Black
 *color0:   #303430
 *color8:   #cdb5cd
+
 ! Red
 *color1:   #bf7979
 *color9:   #f4a45f
+
 ! Green
 *color2:   #97b26b
 *color10:  #c5f779
+
 ! Yellow
 *color3:   #cdcdc1
 *color11:  #ffffed
+
 ! Blue
 *color4:   #86a2be
 *color12:  #98afd9
+
 ! Magenta
 *color5:   #d9b798
 *color13:  #d7d998
+
 ! Cyan
 *color6:   #a1b5cd
 *color14:  #a1b5cd
+
 ! White
 *color7:   #ffffff
 *color15:  #dedede
 
-! pretty urxvt
+! vim: et sw=2 syn=xdefaults
 
 URxvt*termName:                       rxvt
 URxvt*geometry:                       85x16
 ! URxvt*chdir:                          string
 ! URxvt*reverseVideo:                   boolean
-! URxvt*loginShell:                     true
+URxvt*loginShell:                     true
 ! URxvt*jumpScroll:                     boolean
 ! URxvt*skipScroll:                     boolean
 ! URxvt*pastableTabs:                   boolean
@@ -76,8 +77,8 @@ URxvt*fading:                         0
 ! URxvt*cursorUnderline:                boolean
 ! URxvt*cursorBlink:                    boolean
 ! URxvt*pointerBlank:                   boolean
-URxvt*background:                     [75]#000000
-URxvt*foreground:                     [75]#ffffff
+URxvt*background:                     [85]#303430
+URxvt*foreground:                     [85]#ffffff
 ! URxvt*color0:                         color
 ! black + red
 !URxvt*color0:      #101010
@@ -180,5 +181,3 @@ URxvt*matcher.button:                 1
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
 URxvt*url-launcher:                   /usr/bin/chromium
-
-
